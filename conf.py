@@ -34,8 +34,11 @@ html_static_path = ['attachment/doc']
 extensions = [
   'sphinx.ext.autosectionlabel',
   'sphinxnotes.strike',
-  'sphinx_reredirects'
+  'sphinx_reredirects',
+  'sphinx_rtd_dark_mode',
 ]
+
+default_dark_mode = False
 
 redirects = {
   "user/hardware/hcl": "https://www.qubes-os.org/hcl/",
