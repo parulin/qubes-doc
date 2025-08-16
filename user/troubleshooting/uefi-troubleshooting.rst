@@ -85,8 +85,6 @@ Or if you have already rebooted after the first stage install and have encounter
 
       mkdir -p /mnt/sysimage/boot/efi     mount /dev/sda1 /mnt/sysimage/boot/efi
 
-   
-
 4. Execute:
 
    .. code:: console
@@ -123,8 +121,6 @@ Some firmware will not recognize the default Qubes EFI configuration. As such, i
    .. code:: console
 
       mkdir -p /mnt/sysimage/boot/efi     mount /dev/sda1 /mnt/sysimage/boot/efi
-
-   
 
 4. Copy ``grubx64.efi`` to the fallback path:
 
