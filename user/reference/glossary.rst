@@ -7,7 +7,8 @@ Primary
 -------
 
 
-.. glossary:: Primary
+.. glossary::
+
    Qubes OS
       A security-oriented operating system (OS). The main principle of Qubes OS is security by compartmentalization (or isolation), in which activities are compartmentalized (or isolated) in separate :term:`qube`.
 
@@ -17,7 +18,8 @@ Compartment nomenclature
 ------------------------
 
 
-.. glossary:: Compartment nomenclature
+.. glossary::
+
    qube
       A secure compartment in Qubes OS. Currently, qubes are implemented as Xen :term:`domain`, but Qubes OS is independent of its underlying compartmentalization technology. :term:`VM`\ s could be replaced with a different technology, and qubes would still be called "qubes". Therefore, always opt for the term ``qube`` over the other terms unless explicitly guided otherwise.
 
@@ -37,7 +39,8 @@ Qube's types
 ------------
 
 
-.. glossary:: Qube's types
+.. glossary::
+
    admin qube
       A type of :term:`qube` used for administering Qubes OS.
 
@@ -80,7 +83,7 @@ Qube's types variations
 -----------------------
 
 
-.. glossary:: Qube's types variations
+.. glossary::
    disposable template
       Any :term:`app qube` on which :term:`disposable` are based. A disposable template shares its user directories (and, indirectly, the root filesystem of the regular :term:`template` on which it is based) with all :term:`disposable` based on it.
 
@@ -131,7 +134,7 @@ Miscellaneous
 -------------
 
 
-.. glossary:: Miscellaneous
+.. glossary::
    dom0
       :term:`domain` zero. A type of :term:`admin qube`. Also known as the **host** domain, dom0 is the initial qube started by the Xen hypervisor on boot. Dom0 runs the Xen management toolstack and has special privileges relative to other domains, such as direct access to most hardware.
 
