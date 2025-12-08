@@ -4,6 +4,7 @@
 App menu shortcut troubleshooting
 =================================
 
+Example 1
 
 For ease of use Qubes aggregates shortcuts to applications that are installed in app qubes and shows them in one application menu (aka “app menu” or “start menu”) in dom0. Clicking on such shortcut runs the assigned application in its app qube.
 
