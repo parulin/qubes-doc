@@ -1,0 +1,11 @@
+.appmenuselection::before {
+  content: "";
+  display: inline-block;
+
+  height: 16px;
+  width: 16px;
+  background-image: url('../images/qubes-logo-icon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
