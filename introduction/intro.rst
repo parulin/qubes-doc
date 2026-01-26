@@ -31,6 +31,8 @@ These qubes, which are implemented as :term:`virtual machines (VMs) <vm>`, have 
 Features
 --------
 
+.. _strong-isolation-feature:
+
 Strong isolation
    Isolate different pieces of software as if they were installed on separate physical machines using advanced virtualization techniques.
 
