@@ -33,6 +33,11 @@ User Documentation
 
 Core documentation for Qubes users.
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Tutorials
+
+   user/tutorials/index
 
 .. _choosing-your-hardware:
 
