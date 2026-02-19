@@ -2,7 +2,7 @@
 Documentation
 =============
 
-Something
+Something another
 
 =================
 Table of contents
