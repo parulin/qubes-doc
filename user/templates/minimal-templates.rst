@@ -252,6 +252,5 @@ Also, there are packages to provide additional services:
 
 
 
-Documentation on all of these can be found in the :doc:`docs </index>`.
 
 You could, of course, use ``qubes-vm-recommended`` to automatically install many of these, but in that case you are well on the way to a standard Debian template.
