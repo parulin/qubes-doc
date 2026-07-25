@@ -4,6 +4,16 @@ build:
   os: "ubuntu-lts-latest"
   tools:
     python: "3.13"
+  apt_packages:
+    # core-admin
+    - graphviz
+    # core-qrexec
+    - gobject-introspection
+    - libgirepository1.0-dev
+  jobs:
+    build:
+      html:
+        - make --keep-going --ignore-errors full-html
 
 submodules:
   include: all
@@ -16,11 +26,9 @@ sphinx:
 
 python:
   install:
-   - requirements: requirements.txt
+   - requirements: requirements-full.txt
 
 formats:
 - pdf
 - epub
 - htmlzip
-
-

@@ -1,0 +1,9 @@
+[submodule "core-admin"]
+	path = core-admin
+	url = https://github.com/QubesOS/qubes-core-admin.git
+[submodule "core-admin-client"]
+	path = core-admin-client
+	url = https://github.com/QubesOS/qubes-core-admin-client
+[submodule "core-qrexec"]
+	path = core-qrexec
+	url = https://github.com/QubesOS/qubes-core-qrexec

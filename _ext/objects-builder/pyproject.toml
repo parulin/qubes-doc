@@ -1,0 +1,10 @@
+[project]
+name = "objects-builder"
+version = "0.1.0"
+description = "Simple Sphinx builder that only writes doctrees and inventory files"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
+
+[project.entry-points."sphinx.builders"]
+objects = "builder"

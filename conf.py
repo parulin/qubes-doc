@@ -132,6 +132,9 @@ intersphinx_mapping = {
     'core-admin-client': ('https://dev.qubes-os.org/projects/core-admin-client/en/latest/', None),
     'core-qrexec': ('https://dev.qubes-os.org/projects/qubes-core-qrexec/en/stable/', None),
 }
+for project in intersphinx_mapping:
+    exclude_patterns.append(project)
+
 intersphinx_disabled_reftypes = ["*"]
 
 # Open Graph image for social media sharing
@@ -181,3 +184,13 @@ rst_epilog = """
 # -- -- Options for the nitpicky mode ----------------------------------------
 
 nitpicky = True
+
+# -- -- Edit values for "full" build mode ------------------------------------
+
+if 'full' in tags:
+    BUILD_DIR = os.environ.get('READTHEDOCS_OUTPUT', '_build')
+    intersphinx_mapping = {
+        'core-admin': ('core-admin', (f'{BUILD_DIR}/html/core-admin/objects.inv', None)),
+        'core-admin-client': ('core-admin-client', (f'{BUILD_DIR}/html/core-admin-client/objects.inv', None)),
+        'core-qrexec': ('core-qrexec', (f'{BUILD_DIR}/html/core-qrexec/objects.inv', None)),
+    }

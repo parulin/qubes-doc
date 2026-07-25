@@ -1,0 +1,7 @@
+-r requirements.txt
+_ext/objects-builder
+-r core-admin/ci/requirements.txt
+-r core-admin/doc/requirements.txt
+-e core-admin-client
+-r core-qrexec/ci/requirements.txt
+-r core-qrexec/ci/doc-requirements.txt
