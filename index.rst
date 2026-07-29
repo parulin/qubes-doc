@@ -1,6 +1,8 @@
-=============
-Documentation
-=============
+.. _main-index:
+
+============
+|main-title|
+============
 
 =================
 Table of contents
