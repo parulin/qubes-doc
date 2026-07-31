@@ -1,0 +1,84 @@
+:root {
+    --MainBlack: #333333;
+    --SubGray: #888888;
+    --IconDarkGray: #8e8e95;
+    --MiddleGray: #bfbfbf;
+    --LightGray: #d2d2d2;
+    --BackroundGray: #f5f5f5;
+    --PrimaryBlue: #3874d8;
+    --InfoBlue: #43c4f3;
+    --QubesBlue: #63a0ff;
+    --LightBlue: #99bfff;
+    --SuccessGreen: #5ad840;
+    --Purple: #9f389f;
+    --DangerRed: #bd2727;
+    --WarningOrange: #e79e27;
+    --AlertYellow: #e7e532;
+}
+
+rect {
+       fill:none;
+       stroke: var(--PrimaryBlue);
+       stroke-width: 10px;
+}
+
+text {
+	font-family: "Open Sans Bold", sans;
+	font-weight: bold;
+	font-size:200px;
+	text-anchor: start;
+	dominant-baseline: central;
+	fill: var(--PrimaryBlue);
+	stroke: #ffffff;
+	stroke-width:2px;
+}
+
+.position-left, .position-left text {
+    text-anchor: end;
+}
+
+.position-top, .position-top text {
+    text-anchor: middle;
+    dominant-baseline: initial;
+}
+.position-bottom, .position-bottom text {
+    text-anchor: middle;
+    dominant-baseline: hanging;
+}
+
+.outline-w5 {
+    stroke-width: 5px;
+}
+
+
+.MainBlack rect, rect.MainBlack { stroke: var(--MainBlack); }
+.MainBlack text, text.MainBlack { fill: var(--MainBlack); }
+.SubGray rect, rect.SubGray { stroke: var(--SubGray); }
+.SubGray text, text.SubGray { fill: var(--SubGray); }
+.IconDarkGray rect, rect.IconDarkGray { stroke: var(--IconDarkGray); }
+.IconDarkGray text, text.IconDarkGray { fill: var(--IconDarkGray); }
+.MiddleGray rect, rect.MiddleGray { stroke: var(--MiddleGray); }
+.MiddleGray text, text.MiddleGray { fill: var(--MiddleGray); }
+.LightGray rect, rect.LightGray { stroke: var(--LightGray); }
+.LightGray text, text.LightGray { fill: var(--LightGray); }
+.BackroundGray rect, rect.BackroundGray { stroke: var(--BackroundGray); }
+.BackroundGray text, text.BackroundGray { fill: var(--BackroundGray); }
+.PrimaryBlue rect, rect.PrimaryBlue { stroke: var(--PrimaryBlue); }
+.PrimaryBlue text, text.PrimaryBlue { fill: var(--PrimaryBlue); }
+.InfoBlue rect, rect.InfoBlue { stroke: var(--InfoBlue); }
+.InfoBlue text, text.InfoBlue { fill: var(--InfoBlue); }
+.QubesBlue rect, rect.QubesBlue { stroke: var(--QubesBlue); }
+.QubesBlue text, text.QubesBlue { fill: var(--QubesBlue); }
+.LightBlue rect, rect.LightBlue { stroke: var(--LightBlue); }
+.LightBlue text, text.LightBlue { fill: var(--LightBlue); }
+.SuccessGreen rect, rect.SuccessGreen { stroke: var(--SuccessGreen); }
+.SuccessGreen text, text.SuccessGreen { fill: var(--SuccessGreen); }
+.Purple rect, rect.Purple { stroke: var(--Purple); }
+.Purple text, text.Purple { fill: var(--Purple); }
+.DangerRed rect, rect.DangerRed { stroke: var(--DangerRed); }
+.DangerRed text, text.DangerRed { fill: var(--DangerRed); }
+.WarningOrange rect, rect.WarningOrange { stroke: var(--WarningOrange); }
+.WarningOrange text, text.WarningOrange { fill: var(--WarningOrange); }
+.AlertYellow rect, rect.AlertYellow { stroke: var(--AlertYellow); }
+.AlertYellow text, text.AlertYellow { fill: var(--AlertYellow); }
+.

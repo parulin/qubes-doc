@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<svg
+   version="1.1"
+
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+
+   width="1024"
+   height="768"
+   viewBox="0 0 1024 768">
+
+  <desc>
+# TOML description
+
+openqa-scenario = "{{ scenario }}"
+openqa-test = "{{ test }}"
+openqa-test-frame = "{{ test_frame }}"
+openqa-last-update-id = "{{ test_id }}"
+  </desc>
+
+  <link href="qubes-os-svg.css" rel="stylesheet" type="text/css" xmlns="http://www.w3.org/1999/xhtml"/>
+
+  <image width="1024" height="768" xlink:href="example.png" />
+
+  <g class="position-bottom">
+    <rect x="100" y="100" width="100" height="50" />
+    <text x="150" y="160">↑</text>
+  </g>
+
+  <g class="SuccessGreen position-left">
+    <rect x="900" y="100" width="100" height="50" />
+    <text x="890" y="125">→</text>
+  </g>
+
+  <g class="Purple">
+    <rect x="100" y="600" width="100" height="50" />
+    <text x="210" y="625">←</text>
+  </g>
+
+  <g class="DangerRed position-top">
+    <rect x="900" y="700" width="100" height="50" />
+    <text x="950" y="690">↓</text>
+  </g>
+</svg>
