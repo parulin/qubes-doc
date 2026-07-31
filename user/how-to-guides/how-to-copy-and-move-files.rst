@@ -92,11 +92,10 @@ After editing the file in a qube or in a disposable (with the :guilabel:`Edit in
 
    Keep in mind that performing a transfer from a *less trusted* qube to a *more trusted* qube is :ref:`always potentially insecure <qfilecopy-security>` if the data will be parsed in the target qube.
 
-
 How to copy or move a file in another qube in a terminal
 --------------------------------------------------------
 
-The same operations are also available via these command-line tools:
+The same operations are also available via these command-line tools, replace :samp:`{<PATH_OF_THE_FILE>}` by something like :samp:`{test.txt}` and :samp:`{<TARGET_QUBE>}` by :samp:`{personal}` or the desired qube name.
 
 To copy a file
    .. code:: console
@@ -115,6 +114,10 @@ To open a file in a qube
 
          [user@SOURCE_QUBE] $ qvm-open-in-vm <TARGET_QUBE> <PATH_OF_THE_FILE>
 
+   .. hint::
+
+      Instead of :samp:`<PATH_OF_THE_FILE>` you can use a URL, like `https://qubes-os.org <https://qubes-os.org>`__.
+
 To open a file in a new disposable
    .. code:: console
 
@@ -124,3 +127,39 @@ To edit a file in a new disposable
    .. code:: console
 
          [user@SOURCE_QUBE] $ qvm-open-in-dvm <PATH_OF_THE_FILE>
+
+How to open a file type automatically in another qube
+-----------------------------------------------------
+
+One of the main :ref:`feature <introduction/intro:Features>` of Qubes OS is the isolation of each softwares and qubes. So, you might want to open some specific file types in another qube or a disposable. There is plenty of ways to achieve this, so we will just quickly treat how to do that in the default Xfce templates.
+
+.. warning:: The following ideas are not bulletproof!
+
+Set the default app for a file with a file manager
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. Using the file manager, you can open the context menu of a file and select :menuselection:`Ope&n With --> Set Defa&ult Application`.
+2. Then, in the :guilabel:`Set Default Application` window, choose :guilabel:`QubesOS Edit In DisposableVM`
+
+Next time you try to open that file in that qube, it should be opened in a new disposable qube instead.
+
+Set the default app(s) with Xfce4 Settings Manager
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. Open :program:`Settings Manager` (or :program:`xfce4-settings-manager`). You can add, using the settings of the qube, in the :guilabel:`Application` tab
+2. Select :guilabel:`Default Applications`
+3. You can change the default browser and mail reader in the very first tab, so that the links you click will open in another qube:
+
+   1. click on the selection widget
+   2. select :guilabel:`Other`
+   3. click on the folder icon
+   4. in the file selector, check that you are in :file:`/usr/bin` and select ``qvm-open-in-dvm`` and confirm
+
+4. You can change any default application for all kind of files in the :guilabel:`Others` tab:
+
+   1. You have to know the "MIME Type", select it and click on :guilabel:`Open with`
+   2. Select :guilabel:`QubesOS Edit In Disposable VM` and confirm
+
+   .. hint::
+
+      It is also possible to make all files open in a disposable.
