@@ -14,6 +14,8 @@ Qubes OS supports various operations on files and directories (or "folders") bet
 * copying or moving files and directories from a qube to another
 * opening a file from a qube in another, then potentially keeping the changes
 
+Some of those operations rely on :doc:`disposables </user/how-to-guides/how-to-use-disposables`.
+
 In the following examples, the *work* qube will be our source qube and *personal* our target qube.
 
 How to initiate an operation in another qube with a file manager
@@ -28,6 +30,7 @@ How to initiate an operation in another qube with a file manager
    * :guilabel:`Copy to other qube` (possible with multiple files and folders, recursively)
    * :guilabel:`Move to other qube` (possible with multiple files and folders, recursively)
    * :guilabel:`Open in other qube`
+   * :guilabel:`Convert in disposable qube` (only for pictures and PDF files)
    * :guilabel:`Edit in disposable qube`
    * :guilabel:`Open in disposable qube`
 
@@ -50,7 +53,10 @@ How to initiate an operation in another qube with a file manager
 Result of the different operations
 ----------------------------------
 
-Depending on the selected operation and qube, the result is different:
+Depending on the selected operation and qube, the result is different. For operations involving disposable qubes, see:
+
+* :ref:`open-file-in-disposable`
+* :ref:`sanitize-file-in-disposable`
 
 After a copy
 ^^^^^^^^^^^^
@@ -81,7 +87,11 @@ A move operation is almost like a copy. Moving a file is equivalent to copying t
 After opening in other qube
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you have just opened the file in another qube, it will be copied in a temporary directory (:file:`/tmp/`<SOURCE_QUBE>}`) on the target qube. Once the file is closed, it will be removed from the target qube. If you have edited the file while using the :guilabel:`Open in disposable qube` option, it will be lost because the disposable will be closed.
+If you have just opened the file in another qube, it will be copied in a temporary directory (:file:`/tmp/`<SOURCE_QUBE>}-{<RANDOM_SUFFIX>}/{<FILENAME>}`) on the target qube. Once the file is closed, it will be removed from the target qube. If you have edited the file while using the :guilabel:`Open in disposable qube` option, it will be lost because the disposable will be closed.
+
+.. danger::
+
+   Keep in mind that performing a transfer from a *less trusted* qube to a *more trusted* qube is :ref:`always potentially insecure <qfilecopy-security>` if the data will be parsed in the target qube.
 
 After editing in other qube
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -118,15 +128,13 @@ To open a file in a qube
 
       Instead of :samp:`<PATH_OF_THE_FILE>` you can use a URL, like `https://qubes-os.org <https://qubes-os.org>`__.
 
-To open a file in a new disposable
-   .. code:: console
+.. admonition:: See also
 
-         [user@SOURCE_QUBE] $ qvm-open-in-dvm --view-only <TARGET_QUBE> <PATH_OF_THE_FILE>
+   * :ref:`open-file-in-disposable`
+   * :ref:`sanitize-file-in-disposable`
 
-To edit a file in a new disposable
-   .. code:: console
 
-         [user@SOURCE_QUBE] $ qvm-open-in-dvm <PATH_OF_THE_FILE>
+.. _automatically-open-file-type-in-other-qube:
 
 How to open a file type automatically in another qube
 -----------------------------------------------------
