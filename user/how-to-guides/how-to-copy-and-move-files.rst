@@ -14,7 +14,7 @@ Qubes OS supports various operations on files and directories (or "folders") bet
 * copying or moving files and directories from a qube to another
 * opening a file from a qube in another, then potentially keeping the changes
 
-Some of those operations rely on :doc:`disposables </user/how-to-guides/how-to-use-disposables`.
+Some of those operations rely on :doc:`disposables </user/how-to-guides/how-to-use-disposables>`.
 
 In the following examples, the *work* qube will be our source qube and *personal* our target qube.
 
@@ -171,3 +171,8 @@ Set the default app(s) with Xfce4 Settings Manager
    .. hint::
 
       It is also possible to make all files open in a disposable.
+
+See also
+--------
+
+* :ref:`manage-file-operations-policies`
