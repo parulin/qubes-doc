@@ -108,7 +108,7 @@ Open a file in a disposable (from app qube)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-In an app qube's file manager, right click on the file you wish to open in a disposable, then choose :guilabel:`Open in disposable qube` (or :guilabel:`Edit in disposable qube`). Wait a few seconds and the default application for this file type should appear displaying the file content. This app is running in its own dedicated qube, a disposable created for the purpose of viewing or editing this very file. If you have used the :guilabel:`Edit in disposable qube` option, edited the file and saved the changes, the changed file will be saved back to the original app qube, overwriting the original.
+In an app qube's file manager, right click on the file you wish to open in a disposable, then choose :guilabel:`View in disposable qube` (or :guilabel:`Edit in disposable qube`). Wait a few seconds and the default application for this file type should appear displaying the file content. This app is running in its own dedicated qube, a disposable created for the purpose of viewing or editing this very file. If you have used the :guilabel:`Edit in disposable qube` option, edited the file and saved the changes, the changed file will be saved back to the original app qube, overwriting the original.
 
 .. image:: /attachment/doc/r4.3-domU-filemanager-disp-pdfviewer.png
    :alt: App qube file manager context menu being used to edit a PDF in a disposable qube.
