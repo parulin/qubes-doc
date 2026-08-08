@@ -7,7 +7,7 @@ There are two cases when we need a mechanism to copy files between VMs:
 
 - “regular” file copy - when user instructs file manager to copy a given files/directories to a different qube
 
-- “disposable” copy - user selects :guilabel:`Open in disposable` on a file or use :program:`qvm-open-in-dvm`; this file must be copied to a :term:`disposable`, edited by user, and possibly a modified file copied back from the disposable to the source qube.
+- “disposable” copy - user selects :guilabel:`View in disposable qube` on a file or use :program:`qvm-open-in-dvm`; this file must be copied to a :term:`disposable`, edited by user, and possibly a modified file copied back from the disposable to the source qube.
 
 
 
