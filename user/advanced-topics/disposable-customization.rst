@@ -111,6 +111,11 @@ For instance, to have Mozilla Thunderbird application open all attachments in a 
 
 In the current case, we identified the application ID to be ``net.thunderbird.Thunderbird`` (in your case it may as well be ``thunderbird``). Finally, enable the ``app-dispvm.net.thunderbird.Thunderbird`` service via the :ref:`qube settings <how-to-enable-a-service-in-the-settings>`.
 
+.. seealso::
+
+   :ref:`automatically-open-file-type-in-other-qube`
+      Another way to achieve this using graphical tools
+
 .. _open-file-type-in-disposable:
 
 Open a particular file type in a disposable

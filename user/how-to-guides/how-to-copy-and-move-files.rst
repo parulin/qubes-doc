@@ -1,29 +1,34 @@
-=====================================================
-How to copy, move, open or edit files in another qube
-=====================================================
-
-.. note::
-
-   If you wish to simply copy and paste text, or copy from dom0, see:
-
-   * :doc:`/user/how-to-guides/how-to-copy-and-move-files`
-   * :doc:`/user/how-to-guides/how-to-copy-from-dom0`
+====================================
+How to transfert files between qubes
+====================================
 
 Qubes OS supports various operations on files and directories (or "folders") between qubes:
 
-* copying or moving files and directories from a qube to another
-* opening a file from a qube in another, then potentially keeping the changes
+* **copying or moving files and directories** from a qube to another
+* **viewing or editing a file** from a qube in another, then potentially keeping the changes
+* **convert untrusted files** into trusted files (i.e.: a PDF)
 
-Some of those operations rely on :doc:`disposables </user/how-to-guides/how-to-use-disposables>`.
+Some of those operations rely on :term:`disposables <disposable>`.
 
-In the following examples, the *work* qube will be our source qube and *personal* our target qube.
+.. seealso::
 
-How to initiate an operation in another qube with a file manager
-----------------------------------------------------------------
+   :doc:`/user/how-to-guides/how-to-copy-and-move-files`
+      If you wish to simply copy and paste text
 
-1. Open a file manager in the source qube (i.e.:  *work*): the qube containing the file you wish to use
+   :doc:`/user/how-to-guides/how-to-copy-from-dom0`
+      If you wish to copy from dom0
 
-2. Open the context menu of the file you wish to use, using right-click, :kbd:`Menu` or :kbd:`Shift` + :kbd:`F10`.
+   :ref:`Open <open-file-in-disposable>` or :ref:`Sanitize a file in a disposable <sanitize-file-in-disposable>`
+      To open or convert an untrusted file in a disposable
+
+How to start a transfert to another qube with a file manager
+------------------------------------------------------------
+
+1. **Open a file manager in the source qube** (i.e.: *work*): the qube containing the file you wish to use.
+
+   .. hint:: In the following examples, the *work* qube will be our source qube and *personal* our target qube.
+
+2. **Open the context menu** of the file you wish to use, using right-click, :kbd:`Menu` or :kbd:`Shift` + :kbd:`F10`.
 
 3. Select one of:
 
@@ -44,11 +49,15 @@ How to initiate an operation in another qube with a file manager
 
       The dialog of *dom0* waits for confirmation
 
-      There is a reminder of the :guilabel:`Source` qube (here: *work*), the operation (here: *qubes.Filecopy*, but it could be *qubes.OpenInVM*) and a dropdown selector to choose the :guilabel:`Target` qube (here: *personal*)
+      There is a reminder of the :guilabel:`Source` qube (here: *work*), the operation (here: :ref:`qubes.Filecopy <qubes.Filecopy>`, but it could be :ref:`qubes.OpenInVM <qubes.OpenInVM>`, :ref:`qubes.PdfConvert <qubes.PdfConvert>` or :ref:`qubes.GetImageRGBA <qubes.GetImageRGBA>`) and a dropdown selector to choose the :guilabel:`Target` qube (here: *personal*)
 
 5. **(optional)** If the target qube is not already running, it will be started automatically
 
 6. The operation on the file will be run on the target qube
+
+.. danger::
+
+   Keep in mind that performing a transfer from a *less trusted* qube to a *more trusted* qube is :ref:`always potentially insecure <qfilecopy-security>` if the data will be parsed in the target qube.
 
 Result of the different operations
 ----------------------------------
@@ -61,13 +70,11 @@ Depending on the selected operation and qube, the result is different. For opera
 After a copy
 ^^^^^^^^^^^^
 
-After a **copy**: the file will be present in both qubes.
-
-It will show up in a defined directory: :file:`/home/user/QubesIncoming/{<SOURCE_QUBE>}/{<FILENAME>}`. This directory will automatically be created if it does not already exist.
+After a **copy**: the file will be present in both qubes. It will show up in a defined directory: :file:`/home/user/QubesIncoming/{<SOURCE_QUBE>}/{<FILENAME>}`. This directory will automatically be created if it does not already exist.
 
 .. figure:: /attachment/doc/moved-files-qubesincoming.svg
 
-   The file is in :menuselection:`QubesIncoming --> work`
+   The file is in :file:`/home/user/QubesIncoming/{work}/{test.txt}`
 
 .. note::
 
@@ -87,16 +94,11 @@ A move operation is almost like a copy. Moving a file is equivalent to copying t
 After opening in other qube
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you have just opened the file in another qube, it will be copied in a temporary directory (:file:`/tmp/`<SOURCE_QUBE>}-{<RANDOM_SUFFIX>}/{<FILENAME>}`) on the target qube. Once the file is closed, it will be removed from the target qube. If you have edited the file while using the :guilabel:`Open in disposable qube` option, it will be lost because the disposable will be closed.
+If you have opened the file in another qube, it will be copied in a temporary directory (:file:`/tmp/{<SOURCE_QUBE>}-{<RANDOM_SUFFIX>}/{<FILENAME>}`) on the target qube.
 
-.. danger::
+Once the file is closed, it will be removed from the target qube. If you have used :guilabel:`Open in other qube` or :guilabel:`Edit in disposable qube`, the file will be transfered back to the source qube once closed, keeping editions if you have saved the file.
 
-   Keep in mind that performing a transfer from a *less trusted* qube to a *more trusted* qube is :ref:`always potentially insecure <qfilecopy-security>` if the data will be parsed in the target qube.
-
-After editing in other qube
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-After editing the file in a qube or in a disposable (with the :guilabel:`Edit in disposable qube` option), the original file in the source qube will be edited too.
+If you have edited the file in the target qube, while using the :guilabel:`View in disposable qube` option, it will be lost because the disposable will be closed.
 
 .. danger::
 
@@ -126,22 +128,31 @@ To open a file in a qube
 
    .. hint::
 
-      Instead of :samp:`<PATH_OF_THE_FILE>` you can use a URL, like `https://qubes-os.org <https://qubes-os.org>`__.
+      Instead of :samp:`<PATH_OF_THE_FILE>` you can use a URL, like ``https://qubes-os.org``.
+
+.. seealso::
+
+   :ref:`open-file-in-disposable`
+       Like `qvm-open-in-vm` with disposables
+
+   :ref:`sanitize-file-in-disposable`
+       Some files can be converted to trusted files, using disposables.
 
 .. admonition:: See also
 
    * :ref:`open-file-in-disposable`
    * :ref:`sanitize-file-in-disposable`
 
-
 .. _automatically-open-file-type-in-other-qube:
 
 How to open a file type automatically in another qube
 -----------------------------------------------------
 
-One of the main :ref:`feature <introduction/intro:Features>` of Qubes OS is the isolation of each softwares and qubes. So, you might want to open some specific file types in another qube or a disposable. There is plenty of ways to achieve this, so we will just quickly treat how to do that in the default Xfce templates.
+One of the main :ref:`feature <introduction/intro:Features>` of Qubes OS is the isolation of each softwares and qubes. So, you might want to open some specific file types in another qube or a disposable. There is plenty of ways to achieve this, so we will just quickly treat how to do that in the default Xfce templates. For disposable qubes, refer to :ref:`open-file-type-in-disposable` and :ref:`make-application-open-everything-in-disposable`.
 
-.. warning:: The following ideas are not bulletproof!
+.. warning::
+
+   The mechanisms described here and in the :doc:`/user/advanced-topics/disposable-customization` section might be ignored by some applications.
 
 Set the default app for a file with a file manager
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -154,25 +165,27 @@ Next time you try to open that file in that qube, it should be opened in a new d
 Set the default app(s) with Xfce4 Settings Manager
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Open :program:`Settings Manager` (or :program:`xfce4-settings-manager`). You can add, using the settings of the qube, in the :guilabel:`Application` tab
+1. Open :program:`Settings Manager` (or :program:`xfce4-settings-manager`). You can add it to the app menu, using the settings of the qube, in the :guilabel:`Application` tab
 2. Select :guilabel:`Default Applications`
 3. You can change the default browser and mail reader in the very first tab, so that the links you click will open in another qube:
 
    1. click on the selection widget
    2. select :guilabel:`Other`
    3. click on the folder icon
-   4. in the file selector, check that you are in :file:`/usr/bin` and select ``qvm-open-in-dvm`` and confirm
+   4. in the file selector, check that you are in :file:`/usr/bin`, select the file ``qvm-open-in-dvm`` and confirm
 
 4. You can change any default application for all kind of files in the :guilabel:`Others` tab:
 
    1. You have to know the "MIME Type", select it and click on :guilabel:`Open with`
+
+      .. hint:: It is also possible to make all files open in a disposable.
+
    2. Select :guilabel:`QubesOS Edit In Disposable VM` and confirm
 
-   .. hint::
+.. seealso::
 
-      It is also possible to make all files open in a disposable.
+   :ref:`manage-file-operations-policies`
+      To restrict some operations between qubes
 
-See also
---------
-
-* :ref:`manage-file-operations-policies`
+   :ref:`make-application-open-everything-in-disposable`
+      Use of the :option:`!app.dispvm.*` service
