@@ -23,8 +23,8 @@ Examples of valid cases for USB-passthrough:
 Attaching and detaching a USB device
 ------------------------------------
 
-With Qubes Device Widget
-^^^^^^^^^^^^^^^^^^^^^^^^
+With Qubes Devices Widget
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. figure:: /attachment/icons/qubes-desktop-linux-manager/4.3/qubes-devices.svg
    :alt:
@@ -33,7 +33,7 @@ With Qubes Device Widget
 
    Qubes Devices Widget tray icon
 
-Click the Device Widget: a list of available devices appears.
+Click the Devices Widget: a list of available devices appears.
 
 Hover on one device to display a list of qubes you may attach it to.
 

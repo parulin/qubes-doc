@@ -9,7 +9,7 @@ This is an overview of device handling in Qubes OS. For specific devices (:doc:`
 Introduction
 ------------
 
-The interface to deal with devices of all sorts was unified in Qubes 4.0 with the ``qvm-device`` command and the Qubes Devices Widget. In Qubes 3.X, the Qubes VM Manager dealt with attachment as well. This functionality was moved to the Qubes Device Widget, the tool tray icon with a USB trident symbol located in the top right of your screen by default.
+The interface to deal with devices of all sorts was unified in Qubes 4.0 with the ``qvm-device`` command and the Qubes Devices Widget. In Qubes 3.X, the Qubes VM Manager dealt with attachment as well. This functionality was moved to the Qubes Devices Widget, the tool tray icon with a USB trident symbol located in the top right of your screen by default.
 
 There are currently four categories of devices Qubes understands:
 
@@ -23,8 +23,8 @@ There are currently four categories of devices Qubes understands:
 
 Microphones, block devices and USB devices can be attached with the GUI-tool. PCI devices can be attached using the Qube Settings, but require a VM reboot.
 
-General Qubes Device Widget Behavior And Handling
--------------------------------------------------
+General Qubes Devices Widget Behavior And Handling
+--------------------------------------------------
 
 .. figure:: /attachment/icons/qubes-desktop-linux-manager/4.3/qubes-devices.svg
    :alt:

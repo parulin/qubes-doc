@@ -156,7 +156,7 @@ To attach a file as block device to another qube, first turn it into a loopback 
 
    `This command <https://linux.die.net/man/8/losetup>`__ will create the device node ``/dev/loop0`` or, if that is already in use, increase the trailing integer until that name is still available. Afterwards it prints the device-node-name it found.
 
-2. If you want to use the GUI, you’re done. Click the Device Widget and select the ``loop0``-device to attach it to another qube.
+2. If you want to use the GUI, you’re done. Click the Devices Widget and select the ``loop0``-device to attach it to another qube.
 
    - If you rather use the command line, continue:
 
