@@ -9,7 +9,7 @@ This is an overview of device handling in Qubes OS. For specific devices (:doc:`
 Introduction
 ------------
 
-The interface to deal with devices of all sorts was unified in Qubes 4.0 with the ``qvm-device`` command and the Qubes Devices Widget. In Qubes 3.X, the Qubes VM Manager dealt with attachment as well. This functionality was moved to the Qubes Device Widget, the tool tray icon with a yellow square located in the top right of your screen by default.
+The interface to deal with devices of all sorts was unified in Qubes 4.0 with the ``qvm-device`` command and the Qubes Devices Widget. In Qubes 3.X, the Qubes VM Manager dealt with attachment as well. This functionality was moved to the Qubes Device Widget, the tool tray icon with a USB trident symbol located in the top right of your screen by default.
 
 There are currently four categories of devices Qubes understands:
 

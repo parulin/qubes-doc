@@ -33,7 +33,7 @@ With Qubes Device Widget
 
    Qubes Devices Widget tray icon
 
-Click the Device Widget: a list of available devices appears. USB-devices have a USB-icon to their right: |usb icon|
+Click the Device Widget: a list of available devices appears.
 
 Hover on one device to display a list of qubes you may attach it to.
 
